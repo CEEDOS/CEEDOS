@@ -1,0 +1,256 @@
+CEE-DOS
+
+Console Embedded Educational Disk Operating System
+
+Versão: 0.1
+Arquitetura: x86 (via Cosmos)
+Linguagem: C#
+Tipo: Sistema Operacional Educacional estilo DOS
+
+1. Visão Geral
+
+O CEE-DOS é um sistema operacional em modo texto, inspirado nos sistemas Disk Operating System (DOS) clássicos, desenvolvido inteiramente em C# sobre o framework Cosmos.
+
+Seu objetivo principal é educacional, fornecendo uma base simples, clara e extensível para o estudo de:
+
+Arquitetura de sistemas operacionais
+
+Desenvolvimento de kernels
+
+Sistemas de arquivos
+
+Shells em modo texto
+
+Comandos de baixo nível
+
+O CEE-DOS não é uma reimplementação binária do MS-DOS, mas sim um sistema moderno que reproduz sua filosofia e experiência de uso.
+
+2. Características Principais
+
+Kernel próprio baseado no Cosmos
+
+Interface em modo texto (CLI)
+
+Shell estilo DOS
+
+Sistema de arquivos FAT via VFS do Cosmos
+
+Comandos internos básicos
+
+Código-fonte simples e extensível
+
+Foco em clareza e aprendizado
+
+3. Requisitos
+Para desenvolvimento
+
+Visual Studio
+
+Cosmos UserKit instalado
+
+.NET Framework compatível com Cosmos
+
+Para execução
+
+Emulador (VMWare, VirtualBox ou QEMU)
+
+Ou hardware real compatível com Cosmos
+
+4. Processo de Boot
+
+O bootloader do Cosmos inicializa o ambiente
+
+O kernel do CEE-DOS é carregado
+
+O sistema de arquivos FAT é montado
+
+O shell do CEE-DOS é iniciado
+
+O prompt de comando é exibido
+
+Exemplo de inicialização:
+
+CEE-DOS v0.1
+Inicializando sistema...
+Sistema de arquivos carregado.
+
+0:\>
+
+5. Shell do Sistema
+
+O shell do CEE-DOS é responsável por:
+
+Receber comandos do usuário
+
+Interpretar argumentos
+
+Executar comandos internos
+
+Gerenciar o diretório atual
+
+Prompt
+
+O prompt segue o formato:
+
+<unidade>:\<diretório>>
+
+
+Exemplo:
+
+0:\>
+
+6. Comandos Disponíveis
+DIR
+
+Lista arquivos e diretórios do diretório atual.
+
+Sintaxe
+
+DIR
+
+
+Exemplo
+
+0:\> DIR
+<DIR> SYSTEM
+      README.TXT
+
+CD
+
+Altera o diretório atual.
+
+Sintaxe
+
+CD <diretório>
+
+
+Exemplo
+
+0:\> CD SYSTEM
+0:\SYSTEM>
+
+TYPE
+
+Exibe o conteúdo de um arquivo de texto.
+
+Sintaxe
+
+TYPE <arquivo>
+
+
+Exemplo
+
+0:\> TYPE README.TXT
+Bem-vindo ao CEE-DOS
+
+DEL
+
+Remove um arquivo do disco.
+
+Sintaxe
+
+DEL <arquivo>
+
+
+Exemplo
+
+0:\> DEL OLD.TXT
+Arquivo removido.
+
+CLS
+
+Limpa a tela do console.
+
+Sintaxe
+
+CLS
+
+HELP
+
+Exibe a lista de comandos disponíveis.
+
+Sintaxe
+
+HELP
+
+EXIT
+
+Reinicia o sistema.
+
+Sintaxe
+
+EXIT
+
+7. Sistema de Arquivos
+
+O CEE-DOS utiliza o Virtual File System (VFS) do Cosmos, com suporte a:
+
+FAT32 (dependendo da configuração do Cosmos)
+
+Diretórios
+
+Arquivos de texto
+
+Unidade padrão
+
+0:\ — Disco principal
+
+8. Estrutura do Código-Fonte
+CEE-DOS
+ ├─ Kernel.cs        // Núcleo do sistema
+ ├─ Shell.cs         // Interpretador de comandos
+ ├─ Commands/        // Comandos internos
+ │   ├─ DirCommand.cs
+ │   ├─ CdCommand.cs
+ │   ├─ TypeCommand.cs
+ │   ├─ DelCommand.cs
+ │   ├─ ClsCommand.cs
+ │   ├─ HelpCommand.cs
+ │   └─ ExitCommand.cs
+
+9. Limitações Conhecidas
+
+Não possui multitarefa
+
+Não executa binários externos
+
+Não possui gerenciamento de usuários
+
+Interface exclusivamente em modo texto
+
+Sistema de permissões inexistente
+
+Essas limitações são intencionais, visando simplicidade e aprendizado.
+
+10. Objetivos Futuros
+
+Suporte a executáveis próprios (.CEE)
+
+Gerenciador de processos
+
+Multitarefa cooperativa
+
+Drivers personalizados
+
+Interface gráfica simples
+
+Sistema de ajuda integrado (HELP <comando>)
+
+11. Licença
+
+Este projeto é distribuído sob licença livre (definir conforme o repositório: MIT, GPL, etc.).
+
+12. Aviso Legal
+
+CEE-DOS é um sistema educacional.
+Não deve ser utilizado em ambientes de produção ou sistemas críticos.
+
+13. Créditos
+
+Desenvolvido com Cosmos
+
+Inspirado nos sistemas DOS clássicos
+
+Criado para estudo e experimentação
+
+Fim da documentação do CEE-DOS
