@@ -198,16 +198,6 @@ Unidade padrão
 8. Estrutura do Código-Fonte
 CEE-DOS
  ├─ Kernel.cs        // Núcleo do sistema
- ├─ Shell.cs         // Interpretador de comandos
- ├─ Commands/        // Comandos internos
- │   ├─ DirCommand.cs
- │   ├─ CdCommand.cs
- │   ├─ TypeCommand.cs
- │   ├─ DelCommand.cs
- │   ├─ ClsCommand.cs
- │   ├─ HelpCommand.cs
- │   └─ ExitCommand.cs
-
 9. Limitações Conhecidas
 
 Não possui multitarefa
